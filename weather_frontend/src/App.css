@@ -1,0 +1,120 @@
+:root {
+  /* Theme colors from requirements */
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #f1c40f;
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Header styles */
+.header {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  color: white;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 1rem auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid var(--bg-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 4px;
+  color: var(--text-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.search-button:hover {
+  opacity: 0.9;
+}
+
+/* Main content area */
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.weather-display {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.forecast-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.forecast-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  margin-top: auto;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .forecast-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Loading and error states */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.error-message {
+  color: #e74c3c;
+  padding: 1rem;
+  background-color: #fde8e8;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
